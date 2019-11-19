@@ -1,0 +1,893 @@
+
+Shift595.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000420  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         0000001e  00800060  00000420  000004b4  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000003  0080007e  0080007e  000004d2  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  000004d2  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000504  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 00000070  00000000  00000000  00000540  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   000007ad  00000000  00000000  000005b0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 00000278  00000000  00000000  00000d5d  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   00000515  00000000  00000000  00000fd5  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  0000013c  00000000  00000000  000014ec  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    00000320  00000000  00000000  00001628  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    000005c4  00000000  00000000  00001948  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 00000080  00000000  00000000  00001f0c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0e c0       	rjmp	.+28     	; 0x1e <__ctors_end>
+   2:	28 c0       	rjmp	.+80     	; 0x54 <__bad_interrupt>
+   4:	59 c0       	rjmp	.+178    	; 0xb8 <__vector_2>
+   6:	26 c0       	rjmp	.+76     	; 0x54 <__bad_interrupt>
+   8:	25 c0       	rjmp	.+74     	; 0x54 <__bad_interrupt>
+   a:	24 c0       	rjmp	.+72     	; 0x54 <__bad_interrupt>
+   c:	23 c0       	rjmp	.+70     	; 0x54 <__bad_interrupt>
+   e:	22 c0       	rjmp	.+68     	; 0x54 <__bad_interrupt>
+  10:	21 c0       	rjmp	.+66     	; 0x54 <__bad_interrupt>
+  12:	20 c0       	rjmp	.+64     	; 0x54 <__bad_interrupt>
+  14:	1f c0       	rjmp	.+62     	; 0x54 <__bad_interrupt>
+  16:	7d c0       	rjmp	.+250    	; 0x112 <__vector_11>
+  18:	1d c0       	rjmp	.+58     	; 0x54 <__bad_interrupt>
+  1a:	1c c0       	rjmp	.+56     	; 0x54 <__bad_interrupt>
+  1c:	1b c0       	rjmp	.+54     	; 0x54 <__bad_interrupt>
+
+0000001e <__ctors_end>:
+  1e:	11 24       	eor	r1, r1
+  20:	1f be       	out	0x3f, r1	; 63
+  22:	cf e5       	ldi	r28, 0x5F	; 95
+  24:	d2 e0       	ldi	r29, 0x02	; 2
+  26:	de bf       	out	0x3e, r29	; 62
+  28:	cd bf       	out	0x3d, r28	; 61
+
+0000002a <__do_copy_data>:
+  2a:	10 e0       	ldi	r17, 0x00	; 0
+  2c:	a0 e6       	ldi	r26, 0x60	; 96
+  2e:	b0 e0       	ldi	r27, 0x00	; 0
+  30:	e0 e2       	ldi	r30, 0x20	; 32
+  32:	f4 e0       	ldi	r31, 0x04	; 4
+  34:	02 c0       	rjmp	.+4      	; 0x3a <__do_copy_data+0x10>
+  36:	05 90       	lpm	r0, Z+
+  38:	0d 92       	st	X+, r0
+  3a:	ae 37       	cpi	r26, 0x7E	; 126
+  3c:	b1 07       	cpc	r27, r17
+  3e:	d9 f7       	brne	.-10     	; 0x36 <__do_copy_data+0xc>
+
+00000040 <__do_clear_bss>:
+  40:	20 e0       	ldi	r18, 0x00	; 0
+  42:	ae e7       	ldi	r26, 0x7E	; 126
+  44:	b0 e0       	ldi	r27, 0x00	; 0
+  46:	01 c0       	rjmp	.+2      	; 0x4a <.do_clear_bss_start>
+
+00000048 <.do_clear_bss_loop>:
+  48:	1d 92       	st	X+, r1
+
+0000004a <.do_clear_bss_start>:
+  4a:	a1 38       	cpi	r26, 0x81	; 129
+  4c:	b2 07       	cpc	r27, r18
+  4e:	e1 f7       	brne	.-8      	; 0x48 <.do_clear_bss_loop>
+  50:	89 d0       	rcall	.+274    	; 0x164 <main>
+  52:	e4 c1       	rjmp	.+968    	; 0x41c <_exit>
+
+00000054 <__bad_interrupt>:
+  54:	d5 cf       	rjmp	.-86     	; 0x0 <__vectors>
+
+00000056 <_Z9HC595Initv>:
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+  56:	87 b3       	in	r24, 0x17	; 23
+  58:	8f 60       	ori	r24, 0x0F	; 15
+  5a:	87 bb       	out	0x17, r24	; 23
+  5c:	c3 98       	cbi	0x18, 3	; 24
+  5e:	08 95       	ret
+
+00000060 <_Z10HC595Pulsev>:
+  60:	c1 9a       	sbi	0x18, 1	; 24
+  62:	c1 98       	cbi	0x18, 1	; 24
+  64:	08 95       	ret
+
+00000066 <_Z10HC595Latchv>:
+  66:	c2 9a       	sbi	0x18, 2	; 24
+  68:	00 00       	nop
+  6a:	c2 98       	cbi	0x18, 2	; 24
+  6c:	00 00       	nop
+  6e:	08 95       	ret
+
+00000070 <_Z10HC595Writeh>:
+  70:	cf 93       	push	r28
+  72:	df 93       	push	r29
+  74:	d8 2f       	mov	r29, r24
+  76:	c8 e0       	ldi	r28, 0x08	; 8
+  78:	dd 23       	and	r29, r29
+  7a:	14 f4       	brge	.+4      	; 0x80 <_Z10HC595Writeh+0x10>
+  7c:	c0 9a       	sbi	0x18, 0	; 24
+  7e:	01 c0       	rjmp	.+2      	; 0x82 <_Z10HC595Writeh+0x12>
+  80:	c0 98       	cbi	0x18, 0	; 24
+  82:	ee df       	rcall	.-36     	; 0x60 <_Z10HC595Pulsev>
+  84:	dd 0f       	add	r29, r29
+  86:	c1 50       	subi	r28, 0x01	; 1
+  88:	b9 f7       	brne	.-18     	; 0x78 <_Z10HC595Writeh+0x8>
+  8a:	df 91       	pop	r29
+  8c:	cf 91       	pop	r28
+  8e:	08 95       	ret
+
+00000090 <_Z9writeByteh>:
+}
+
+void writeByte(uint8_t byte0)
+{
+
+	HC595Write(byte0);
+  90:	ef df       	rcall	.-34     	; 0x70 <_Z10HC595Writeh>
+	HC595Latch();
+  92:	e9 df       	rcall	.-46     	; 0x66 <_Z10HC595Latchv>
+  94:	08 95       	ret
+
+00000096 <_Z12EEPROM_writehh>:
+}
+
+void EEPROM_write(uint8_t uiAddress, uint8_t ucData) //Stolen from https://stackoverflow.com/questions/4412111/avr-eeprom-read-write
+{
+	while(EECR & (1<<EEPE));    /* Wait for completion of previous write */
+  96:	e1 99       	sbic	0x1c, 1	; 28
+  98:	fe cf       	rjmp	.-4      	; 0x96 <_Z12EEPROM_writehh>
+	EEARH = 0x00;
+  9a:	1f ba       	out	0x1f, r1	; 31
+	EEARL = uiAddress;
+  9c:	8e bb       	out	0x1e, r24	; 30
+	EEDR = ucData;
+  9e:	6d bb       	out	0x1d, r22	; 29
+	cli();
+  a0:	f8 94       	cli
+	EECR |= (1<<EEMPE);     /* Write logical one to EEMPE */
+  a2:	e2 9a       	sbi	0x1c, 2	; 28
+	EECR |= (1<<EEPE);      /* Start eeprom write by setting EEPE */
+  a4:	e1 9a       	sbi	0x1c, 1	; 28
+	sei();
+  a6:	78 94       	sei
+  a8:	08 95       	ret
+
+000000aa <_Z11EEPROM_readh>:
+}
+unsigned char EEPROM_read(uint8_t uiAddress) //Stolen from https://stackoverflow.com/questions/4412111/avr-eeprom-read-write
+{
+	while(EECR & (1<<EEPE)); /* Wait for completion of previous write */
+  aa:	e1 99       	sbic	0x1c, 1	; 28
+  ac:	fe cf       	rjmp	.-4      	; 0xaa <_Z11EEPROM_readh>
+
+	EEARH = (uiAddress>>8);  /* Set up address register */
+  ae:	1f ba       	out	0x1f, r1	; 31
+	EEARL = uiAddress;
+  b0:	8e bb       	out	0x1e, r24	; 30
+
+	EECR |= (1<<EERE);       /* Start eeprom read by writing EERE */
+  b2:	e0 9a       	sbi	0x1c, 0	; 28
+
+	return EEDR;             /* Return data from Data Register */
+  b4:	8d b3       	in	r24, 0x1d	; 29
+}
+  b6:	08 95       	ret
+
+000000b8 <__vector_2>:
+
+
+
+ISR(PCINT0_vect)
+{
+  b8:	1f 92       	push	r1
+  ba:	0f 92       	push	r0
+  bc:	0f b6       	in	r0, 0x3f	; 63
+  be:	0f 92       	push	r0
+  c0:	11 24       	eor	r1, r1
+  c2:	8f 93       	push	r24
+  c4:	9f 93       	push	r25
+	if (((PINB&(1<<PB4)) == 0x00) && (coolDown == 0x00))
+  c6:	b4 99       	sbic	0x16, 4	; 22
+  c8:	1d c0       	rjmp	.+58     	; 0x104 <__vector_2+0x4c>
+  ca:	80 91 7e 00 	lds	r24, 0x007E	; 0x80007e <__data_end>
+  ce:	88 23       	and	r24, r24
+  d0:	71 f0       	breq	.+28     	; 0xee <__vector_2+0x36>
+  d2:	18 c0       	rjmp	.+48     	; 0x104 <__vector_2+0x4c>
+	{
+		mode++;
+		j = 0xFD; //Exit current mode loop
+		//coolDown = 0x0F;
+		if (mode >= 7){ //Max mode options - 1
+			mode = 0;
+  d4:	10 92 80 00 	sts	0x0080, r1	; 0x800080 <mode>
+		}
+		//Set up Timer1 for btn cool down 
+		coolDown = 1;
+  d8:	81 e0       	ldi	r24, 0x01	; 1
+  da:	80 93 7e 00 	sts	0x007E, r24	; 0x80007e <__data_end>
+		TCCR0B = (2 << CS00);              //div8
+  de:	82 e0       	ldi	r24, 0x02	; 2
+  e0:	83 bf       	out	0x33, r24	; 51
+		OCR0B = F_CPU/8 * 0.000500 - 1;    // 500us compare value
+  e2:	8d e3       	ldi	r24, 0x3D	; 61
+  e4:	88 bd       	out	0x28, r24	; 40
+		TIMSK |= (1<<OCIE0B);              //if you want interrupt				
+  e6:	89 b7       	in	r24, 0x39	; 57
+  e8:	88 60       	ori	r24, 0x08	; 8
+  ea:	89 bf       	out	0x39, r24	; 57
+	}
+}
+  ec:	0b c0       	rjmp	.+22     	; 0x104 <__vector_2+0x4c>
+
+ISR(PCINT0_vect)
+{
+	if (((PINB&(1<<PB4)) == 0x00) && (coolDown == 0x00))
+	{
+		mode++;
+  ee:	80 91 80 00 	lds	r24, 0x0080	; 0x800080 <mode>
+  f2:	8f 5f       	subi	r24, 0xFF	; 255
+  f4:	80 93 80 00 	sts	0x0080, r24	; 0x800080 <mode>
+		j = 0xFD; //Exit current mode loop
+  f8:	9d ef       	ldi	r25, 0xFD	; 253
+  fa:	90 93 7f 00 	sts	0x007F, r25	; 0x80007f <j>
+		//coolDown = 0x0F;
+		if (mode >= 7){ //Max mode options - 1
+  fe:	87 30       	cpi	r24, 0x07	; 7
+ 100:	48 f7       	brcc	.-46     	; 0xd4 <__vector_2+0x1c>
+ 102:	ea cf       	rjmp	.-44     	; 0xd8 <__vector_2+0x20>
+		coolDown = 1;
+		TCCR0B = (2 << CS00);              //div8
+		OCR0B = F_CPU/8 * 0.000500 - 1;    // 500us compare value
+		TIMSK |= (1<<OCIE0B);              //if you want interrupt				
+	}
+}
+ 104:	9f 91       	pop	r25
+ 106:	8f 91       	pop	r24
+ 108:	0f 90       	pop	r0
+ 10a:	0f be       	out	0x3f, r0	; 63
+ 10c:	0f 90       	pop	r0
+ 10e:	1f 90       	pop	r1
+ 110:	18 95       	reti
+
+00000112 <__vector_11>:
+
+ISR(TIMER0_COMPB_vect)
+{
+ 112:	1f 92       	push	r1
+ 114:	0f 92       	push	r0
+ 116:	0f b6       	in	r0, 0x3f	; 63
+ 118:	0f 92       	push	r0
+ 11a:	11 24       	eor	r1, r1
+ 11c:	2f 93       	push	r18
+ 11e:	3f 93       	push	r19
+ 120:	4f 93       	push	r20
+ 122:	5f 93       	push	r21
+ 124:	6f 93       	push	r22
+ 126:	7f 93       	push	r23
+ 128:	8f 93       	push	r24
+ 12a:	9f 93       	push	r25
+ 12c:	af 93       	push	r26
+ 12e:	bf 93       	push	r27
+ 130:	ef 93       	push	r30
+ 132:	ff 93       	push	r31
+	//Cool Down timer complete
+	coolDown = 0x00;
+ 134:	10 92 7e 00 	sts	0x007E, r1	; 0x80007e <__data_end>
+	TIMSK = 0x00;  //Stop the counter
+ 138:	19 be       	out	0x39, r1	; 57
+	EEPROM_write(0x07, mode); // Save mode for next power up
+ 13a:	60 91 80 00 	lds	r22, 0x0080	; 0x800080 <mode>
+ 13e:	87 e0       	ldi	r24, 0x07	; 7
+ 140:	aa df       	rcall	.-172    	; 0x96 <_Z12EEPROM_writehh>
+}
+ 142:	ff 91       	pop	r31
+ 144:	ef 91       	pop	r30
+ 146:	bf 91       	pop	r27
+ 148:	af 91       	pop	r26
+ 14a:	9f 91       	pop	r25
+ 14c:	8f 91       	pop	r24
+ 14e:	7f 91       	pop	r23
+ 150:	6f 91       	pop	r22
+ 152:	5f 91       	pop	r21
+ 154:	4f 91       	pop	r20
+ 156:	3f 91       	pop	r19
+ 158:	2f 91       	pop	r18
+ 15a:	0f 90       	pop	r0
+ 15c:	0f be       	out	0x3f, r0	; 63
+ 15e:	0f 90       	pop	r0
+ 160:	1f 90       	pop	r1
+ 162:	18 95       	reti
+
+00000164 <main>:
+
+int main()
+{
+ 164:	cf 93       	push	r28
+ 166:	df 93       	push	r29
+ 168:	cd b7       	in	r28, 0x3d	; 61
+ 16a:	de b7       	in	r29, 0x3e	; 62
+ 16c:	a2 97       	sbiw	r28, 0x22	; 34
+ 16e:	0f b6       	in	r0, 0x3f	; 63
+ 170:	f8 94       	cli
+ 172:	de bf       	out	0x3e, r29	; 62
+ 174:	0f be       	out	0x3f, r0	; 63
+ 176:	cd bf       	out	0x3d, r28	; 61
+	HC595Init();
+ 178:	6e df       	rcall	.-292    	; 0x56 <_Z9HC595Initv>
+	PORTB ^= (1<<PB4); //Btn 
+ 17a:	98 b3       	in	r25, 0x18	; 24
+ 17c:	80 e1       	ldi	r24, 0x10	; 16
+ 17e:	89 27       	eor	r24, r25
+ 180:	88 bb       	out	0x18, r24	; 24
+	uint8_t pattern1[] = {0x01,0x03,0x07,0x0F,0x1F,0x3F,0xBF,0xFF,0x7F,0xBF,0x3F,0x3E,0x3C,0x38,0x30,0x20};  
+ 182:	80 e1       	ldi	r24, 0x10	; 16
+ 184:	e0 e6       	ldi	r30, 0x60	; 96
+ 186:	f0 e0       	ldi	r31, 0x00	; 0
+ 188:	de 01       	movw	r26, r28
+ 18a:	11 96       	adiw	r26, 0x01	; 1
+ 18c:	01 90       	ld	r0, Z+
+ 18e:	0d 92       	st	X+, r0
+ 190:	8a 95       	dec	r24
+ 192:	e1 f7       	brne	.-8      	; 0x18c <main+0x28>
+	uint8_t pattern2[] = {0x01,0x05,0x15,0x17,0x1F,0x3F,0xFF};
+ 194:	87 e0       	ldi	r24, 0x07	; 7
+ 196:	e0 e7       	ldi	r30, 0x70	; 112
+ 198:	f0 e0       	ldi	r31, 0x00	; 0
+ 19a:	de 01       	movw	r26, r28
+ 19c:	51 96       	adiw	r26, 0x11	; 17
+ 19e:	01 90       	ld	r0, Z+
+ 1a0:	0d 92       	st	X+, r0
+ 1a2:	8a 95       	dec	r24
+ 1a4:	e1 f7       	brne	.-8      	; 0x19e <main+0x3a>
+	uint8_t pattern3[] = {0xFF, 0x3F};
+ 1a6:	8f ef       	ldi	r24, 0xFF	; 255
+ 1a8:	88 8f       	std	Y+24, r24	; 0x18
+ 1aa:	9f e3       	ldi	r25, 0x3F	; 63
+ 1ac:	99 8f       	std	Y+25, r25	; 0x19
+	uint8_t pattern4[] = {0xFE,0xFD,0xFB,0xF7,0xEF,0xDF,0xFF};
+ 1ae:	97 e0       	ldi	r25, 0x07	; 7
+ 1b0:	e7 e7       	ldi	r30, 0x77	; 119
+ 1b2:	f0 e0       	ldi	r31, 0x00	; 0
+ 1b4:	de 01       	movw	r26, r28
+ 1b6:	5a 96       	adiw	r26, 0x1a	; 26
+ 1b8:	01 90       	ld	r0, Z+
+ 1ba:	0d 92       	st	X+, r0
+ 1bc:	9a 95       	dec	r25
+ 1be:	e1 f7       	brne	.-8      	; 0x1b8 <main+0x54>
+	uint8_t pattern5[] = {0xFF, 0xC0};
+ 1c0:	89 a3       	std	Y+33, r24	; 0x21
+ 1c2:	80 ec       	ldi	r24, 0xC0	; 192
+ 1c4:	8a a3       	std	Y+34, r24	; 0x22
+	mode = EEPROM_read(0x07); // Read mode selection from last power cycle
+ 1c6:	87 e0       	ldi	r24, 0x07	; 7
+ 1c8:	70 df       	rcall	.-288    	; 0xaa <_Z11EEPROM_readh>
+ 1ca:	80 93 80 00 	sts	0x0080, r24	; 0x800080 <mode>
+	if(mode > 0x07){ //catch any errors in EEPROM
+ 1ce:	88 30       	cpi	r24, 0x08	; 8
+ 1d0:	10 f0       	brcs	.+4      	; 0x1d6 <main+0x72>
+		mode = 0x00;
+ 1d2:	10 92 80 00 	sts	0x0080, r1	; 0x800080 <mode>
+	}
+	
+	
+	GIMSK |= (1<<PCIE);		
+ 1d6:	8b b7       	in	r24, 0x3b	; 59
+ 1d8:	80 62       	ori	r24, 0x20	; 32
+ 1da:	8b bf       	out	0x3b, r24	; 59
+	PCMSK |= (1<<PB4);
+ 1dc:	ac 9a       	sbi	0x15, 4	; 21
+	sei();
+ 1de:	78 94       	sei
+			{
+				writeByte(pattern2[j]);
+				Wait();
+			}
+			
+			for (j=8;j>0;j--)
+ 1e0:	08 e0       	ldi	r16, 0x08	; 8
+	
+	
+		
+	while(1)
+	{		
+		if (mode == 0)
+ 1e2:	80 91 80 00 	lds	r24, 0x0080	; 0x800080 <mode>
+ 1e6:	81 11       	cpse	r24, r1
+ 1e8:	fa c0       	rjmp	.+500    	; 0x3de <__stack+0x17f>
+		{
+			for (j=0;j<2;j++)
+ 1ea:	10 92 7f 00 	sts	0x007F, r1	; 0x80007f <j>
+			{
+				writeByte(pattern3[j]);
+ 1ee:	e8 e1       	ldi	r30, 0x18	; 24
+ 1f0:	f0 e0       	ldi	r31, 0x00	; 0
+ 1f2:	ec 0f       	add	r30, r28
+ 1f4:	fd 1f       	adc	r31, r29
+ 1f6:	e8 0f       	add	r30, r24
+ 1f8:	f1 1d       	adc	r31, r1
+ 1fa:	80 81       	ld	r24, Z
+ 1fc:	49 df       	rcall	.-366    	; 0x90 <_Z9writeByteh>
+ 1fe:	2f e9       	ldi	r18, 0x9F	; 159
+ 200:	86 e8       	ldi	r24, 0x86	; 134
+ 202:	91 e0       	ldi	r25, 0x01	; 1
+ 204:	21 50       	subi	r18, 0x01	; 1
+ 206:	80 40       	sbci	r24, 0x00	; 0
+ 208:	90 40       	sbci	r25, 0x00	; 0
+ 20a:	e1 f7       	brne	.-8      	; 0x204 <main+0xa0>
+ 20c:	00 c0       	rjmp	.+0      	; 0x20e <main+0xaa>
+ 20e:	00 00       	nop
+ 210:	2f e9       	ldi	r18, 0x9F	; 159
+ 212:	86 e8       	ldi	r24, 0x86	; 134
+ 214:	91 e0       	ldi	r25, 0x01	; 1
+ 216:	21 50       	subi	r18, 0x01	; 1
+ 218:	80 40       	sbci	r24, 0x00	; 0
+ 21a:	90 40       	sbci	r25, 0x00	; 0
+ 21c:	e1 f7       	brne	.-8      	; 0x216 <main+0xb2>
+ 21e:	00 c0       	rjmp	.+0      	; 0x220 <main+0xbc>
+ 220:	00 00       	nop
+		
+	while(1)
+	{		
+		if (mode == 0)
+		{
+			for (j=0;j<2;j++)
+ 222:	80 91 7f 00 	lds	r24, 0x007F	; 0x80007f <j>
+ 226:	8f 5f       	subi	r24, 0xFF	; 255
+ 228:	80 93 7f 00 	sts	0x007F, r24	; 0x80007f <j>
+ 22c:	82 30       	cpi	r24, 0x02	; 2
+ 22e:	f8 f2       	brcs	.-66     	; 0x1ee <main+0x8a>
+				writeByte(pattern3[j]);
+				Wait();	
+				Wait();
+			}
+		}
+		if (mode == 1)
+ 230:	80 91 80 00 	lds	r24, 0x0080	; 0x800080 <mode>
+ 234:	81 30       	cpi	r24, 0x01	; 1
+ 236:	09 f0       	breq	.+2      	; 0x23a <main+0xd6>
+ 238:	d9 c0       	rjmp	.+434    	; 0x3ec <__stack+0x18d>
+		{
+			for (j=0;j<16;j++)
+ 23a:	10 92 7f 00 	sts	0x007F, r1	; 0x80007f <j>
+	TIMSK = 0x00;  //Stop the counter
+	EEPROM_write(0x07, mode); // Save mode for next power up
+}
+
+int main()
+{
+ 23e:	80 e0       	ldi	r24, 0x00	; 0
+		}
+		if (mode == 1)
+		{
+			for (j=0;j<16;j++)
+			{
+				writeByte(pattern1[j]);
+ 240:	e1 e0       	ldi	r30, 0x01	; 1
+ 242:	f0 e0       	ldi	r31, 0x00	; 0
+ 244:	ec 0f       	add	r30, r28
+ 246:	fd 1f       	adc	r31, r29
+ 248:	e8 0f       	add	r30, r24
+ 24a:	f1 1d       	adc	r31, r1
+ 24c:	80 81       	ld	r24, Z
+ 24e:	20 df       	rcall	.-448    	; 0x90 <_Z9writeByteh>
+ 250:	2f e9       	ldi	r18, 0x9F	; 159
+ 252:	86 e8       	ldi	r24, 0x86	; 134
+ 254:	91 e0       	ldi	r25, 0x01	; 1
+ 256:	21 50       	subi	r18, 0x01	; 1
+ 258:	80 40       	sbci	r24, 0x00	; 0
+ 25a:	90 40       	sbci	r25, 0x00	; 0
+ 25c:	e1 f7       	brne	.-8      	; 0x256 <main+0xf2>
+ 25e:	00 c0       	rjmp	.+0      	; 0x260 <__stack+0x1>
+ 260:	00 00       	nop
+				Wait();
+			}
+		}
+		if (mode == 1)
+		{
+			for (j=0;j<16;j++)
+ 262:	80 91 7f 00 	lds	r24, 0x007F	; 0x80007f <j>
+ 266:	8f 5f       	subi	r24, 0xFF	; 255
+ 268:	80 93 7f 00 	sts	0x007F, r24	; 0x80007f <j>
+ 26c:	80 31       	cpi	r24, 0x10	; 16
+ 26e:	40 f3       	brcs	.-48     	; 0x240 <main+0xdc>
+			{
+				writeByte(pattern1[j]);
+				Wait();
+			}
+		}
+		if (mode == 2)
+ 270:	80 91 80 00 	lds	r24, 0x0080	; 0x800080 <mode>
+ 274:	82 30       	cpi	r24, 0x02	; 2
+ 276:	09 f0       	breq	.+2      	; 0x27a <__stack+0x1b>
+ 278:	c0 c0       	rjmp	.+384    	; 0x3fa <__stack+0x19b>
+		{
+			for (j=0;j<7;j++)
+ 27a:	10 92 7f 00 	sts	0x007F, r1	; 0x80007f <j>
+	TIMSK = 0x00;  //Stop the counter
+	EEPROM_write(0x07, mode); // Save mode for next power up
+}
+
+int main()
+{
+ 27e:	80 e0       	ldi	r24, 0x00	; 0
+		}
+		if (mode == 2)
+		{
+			for (j=0;j<7;j++)
+			{
+				writeByte(pattern2[j]);
+ 280:	e1 e1       	ldi	r30, 0x11	; 17
+ 282:	f0 e0       	ldi	r31, 0x00	; 0
+ 284:	ec 0f       	add	r30, r28
+ 286:	fd 1f       	adc	r31, r29
+ 288:	e8 0f       	add	r30, r24
+ 28a:	f1 1d       	adc	r31, r1
+ 28c:	80 81       	ld	r24, Z
+ 28e:	00 df       	rcall	.-512    	; 0x90 <_Z9writeByteh>
+ 290:	2f e9       	ldi	r18, 0x9F	; 159
+ 292:	86 e8       	ldi	r24, 0x86	; 134
+ 294:	91 e0       	ldi	r25, 0x01	; 1
+ 296:	21 50       	subi	r18, 0x01	; 1
+ 298:	80 40       	sbci	r24, 0x00	; 0
+ 29a:	90 40       	sbci	r25, 0x00	; 0
+ 29c:	e1 f7       	brne	.-8      	; 0x296 <__stack+0x37>
+ 29e:	00 c0       	rjmp	.+0      	; 0x2a0 <__stack+0x41>
+ 2a0:	00 00       	nop
+				Wait();
+			}
+		}
+		if (mode == 2)
+		{
+			for (j=0;j<7;j++)
+ 2a2:	80 91 7f 00 	lds	r24, 0x007F	; 0x80007f <j>
+ 2a6:	8f 5f       	subi	r24, 0xFF	; 255
+ 2a8:	80 93 7f 00 	sts	0x007F, r24	; 0x80007f <j>
+ 2ac:	87 30       	cpi	r24, 0x07	; 7
+ 2ae:	40 f3       	brcs	.-48     	; 0x280 <__stack+0x21>
+			{
+				writeByte(pattern2[j]);
+				Wait();
+			}
+			
+			for (j=8;j>0;j--)
+ 2b0:	00 93 7f 00 	sts	0x007F, r16	; 0x80007f <j>
+ 2b4:	80 2f       	mov	r24, r16
+			{
+				if (mode == 2) //Check for exit condition
+ 2b6:	90 91 80 00 	lds	r25, 0x0080	; 0x800080 <mode>
+ 2ba:	92 30       	cpi	r25, 0x02	; 2
+ 2bc:	89 f4       	brne	.+34     	; 0x2e0 <__stack+0x81>
+				{
+					writeByte(pattern2[j]);
+ 2be:	e1 e1       	ldi	r30, 0x11	; 17
+ 2c0:	f0 e0       	ldi	r31, 0x00	; 0
+ 2c2:	ec 0f       	add	r30, r28
+ 2c4:	fd 1f       	adc	r31, r29
+ 2c6:	e8 0f       	add	r30, r24
+ 2c8:	f1 1d       	adc	r31, r1
+ 2ca:	80 81       	ld	r24, Z
+ 2cc:	e1 de       	rcall	.-574    	; 0x90 <_Z9writeByteh>
+ 2ce:	2f e9       	ldi	r18, 0x9F	; 159
+ 2d0:	86 e8       	ldi	r24, 0x86	; 134
+ 2d2:	91 e0       	ldi	r25, 0x01	; 1
+ 2d4:	21 50       	subi	r18, 0x01	; 1
+ 2d6:	80 40       	sbci	r24, 0x00	; 0
+ 2d8:	90 40       	sbci	r25, 0x00	; 0
+ 2da:	e1 f7       	brne	.-8      	; 0x2d4 <__stack+0x75>
+ 2dc:	00 c0       	rjmp	.+0      	; 0x2de <__stack+0x7f>
+ 2de:	00 00       	nop
+			{
+				writeByte(pattern2[j]);
+				Wait();
+			}
+			
+			for (j=8;j>0;j--)
+ 2e0:	80 91 7f 00 	lds	r24, 0x007F	; 0x80007f <j>
+ 2e4:	81 50       	subi	r24, 0x01	; 1
+ 2e6:	80 93 7f 00 	sts	0x007F, r24	; 0x80007f <j>
+ 2ea:	81 11       	cpse	r24, r1
+ 2ec:	e4 cf       	rjmp	.-56     	; 0x2b6 <__stack+0x57>
+					Wait();
+				}
+			}
+					
+		}
+		if (mode == 3)
+ 2ee:	80 91 80 00 	lds	r24, 0x0080	; 0x800080 <mode>
+ 2f2:	83 30       	cpi	r24, 0x03	; 3
+ 2f4:	09 f0       	breq	.+2      	; 0x2f8 <__stack+0x99>
+ 2f6:	88 c0       	rjmp	.+272    	; 0x408 <__FUSE_REGION_LENGTH__+0x8>
+		{
+			for (j=0;j<6;j++)
+ 2f8:	10 92 7f 00 	sts	0x007F, r1	; 0x80007f <j>
+			{
+				writeByte(pattern2[j]);
+				Wait();
+			}
+			
+			for (j=8;j>0;j--)
+ 2fc:	80 e0       	ldi	r24, 0x00	; 0
+		}
+		if (mode == 3)
+		{
+			for (j=0;j<6;j++)
+			{
+				writeByte(pattern4[j]);
+ 2fe:	ea e1       	ldi	r30, 0x1A	; 26
+ 300:	f0 e0       	ldi	r31, 0x00	; 0
+ 302:	ec 0f       	add	r30, r28
+ 304:	fd 1f       	adc	r31, r29
+ 306:	e8 0f       	add	r30, r24
+ 308:	f1 1d       	adc	r31, r1
+ 30a:	80 81       	ld	r24, Z
+ 30c:	c1 de       	rcall	.-638    	; 0x90 <_Z9writeByteh>
+ 30e:	2f e9       	ldi	r18, 0x9F	; 159
+ 310:	86 e8       	ldi	r24, 0x86	; 134
+ 312:	91 e0       	ldi	r25, 0x01	; 1
+ 314:	21 50       	subi	r18, 0x01	; 1
+ 316:	80 40       	sbci	r24, 0x00	; 0
+ 318:	90 40       	sbci	r25, 0x00	; 0
+ 31a:	e1 f7       	brne	.-8      	; 0x314 <__stack+0xb5>
+ 31c:	00 c0       	rjmp	.+0      	; 0x31e <__stack+0xbf>
+ 31e:	00 00       	nop
+			}
+					
+		}
+		if (mode == 3)
+		{
+			for (j=0;j<6;j++)
+ 320:	80 91 7f 00 	lds	r24, 0x007F	; 0x80007f <j>
+ 324:	8f 5f       	subi	r24, 0xFF	; 255
+ 326:	80 93 7f 00 	sts	0x007F, r24	; 0x80007f <j>
+ 32a:	86 30       	cpi	r24, 0x06	; 6
+ 32c:	40 f3       	brcs	.-48     	; 0x2fe <__stack+0x9f>
+				writeByte(pattern4[j]);
+				Wait();
+			}
+			
+		}
+		if (mode == 4)
+ 32e:	80 91 80 00 	lds	r24, 0x0080	; 0x800080 <mode>
+ 332:	84 30       	cpi	r24, 0x04	; 4
+ 334:	09 f0       	breq	.+2      	; 0x338 <__stack+0xd9>
+ 336:	6f c0       	rjmp	.+222    	; 0x416 <__FUSE_REGION_LENGTH__+0x16>
+		{
+			for (j=0;j<2;j++)
+ 338:	10 92 7f 00 	sts	0x007F, r1	; 0x80007f <j>
+			{
+				writeByte(pattern2[j]);
+				Wait();
+			}
+			
+			for (j=8;j>0;j--)
+ 33c:	80 e0       	ldi	r24, 0x00	; 0
+		}
+		if (mode == 4)
+		{
+			for (j=0;j<2;j++)
+			{
+				writeByte(pattern5[j]);
+ 33e:	e1 e2       	ldi	r30, 0x21	; 33
+ 340:	f0 e0       	ldi	r31, 0x00	; 0
+ 342:	ec 0f       	add	r30, r28
+ 344:	fd 1f       	adc	r31, r29
+ 346:	e8 0f       	add	r30, r24
+ 348:	f1 1d       	adc	r31, r1
+ 34a:	80 81       	ld	r24, Z
+ 34c:	a1 de       	rcall	.-702    	; 0x90 <_Z9writeByteh>
+ 34e:	2f e9       	ldi	r18, 0x9F	; 159
+ 350:	86 e8       	ldi	r24, 0x86	; 134
+ 352:	91 e0       	ldi	r25, 0x01	; 1
+ 354:	21 50       	subi	r18, 0x01	; 1
+ 356:	80 40       	sbci	r24, 0x00	; 0
+ 358:	90 40       	sbci	r25, 0x00	; 0
+ 35a:	e1 f7       	brne	.-8      	; 0x354 <__stack+0xf5>
+ 35c:	00 c0       	rjmp	.+0      	; 0x35e <__stack+0xff>
+ 35e:	00 00       	nop
+ 360:	2f e9       	ldi	r18, 0x9F	; 159
+ 362:	86 e8       	ldi	r24, 0x86	; 134
+ 364:	91 e0       	ldi	r25, 0x01	; 1
+ 366:	21 50       	subi	r18, 0x01	; 1
+ 368:	80 40       	sbci	r24, 0x00	; 0
+ 36a:	90 40       	sbci	r25, 0x00	; 0
+ 36c:	e1 f7       	brne	.-8      	; 0x366 <__stack+0x107>
+ 36e:	00 c0       	rjmp	.+0      	; 0x370 <__stack+0x111>
+ 370:	00 00       	nop
+			}
+			
+		}
+		if (mode == 4)
+		{
+			for (j=0;j<2;j++)
+ 372:	80 91 7f 00 	lds	r24, 0x007F	; 0x80007f <j>
+ 376:	8f 5f       	subi	r24, 0xFF	; 255
+ 378:	80 93 7f 00 	sts	0x007F, r24	; 0x80007f <j>
+ 37c:	82 30       	cpi	r24, 0x02	; 2
+ 37e:	f8 f2       	brcs	.-66     	; 0x33e <__stack+0xdf>
+				writeByte(pattern5[j]);
+				Wait();
+				Wait();
+			}
+		}
+		if (mode == 5)
+ 380:	80 91 80 00 	lds	r24, 0x0080	; 0x800080 <mode>
+ 384:	85 30       	cpi	r24, 0x05	; 5
+ 386:	b9 f4       	brne	.+46     	; 0x3b6 <__stack+0x157>
+		{
+			uint8_t shiftedNum =0x00;
+			for (j=0;j<9;j++)
+ 388:	10 92 7f 00 	sts	0x007F, r1	; 0x80007f <j>
+			{
+				writeByte(pattern2[j]);
+				Wait();
+			}
+			
+			for (j=8;j>0;j--)
+ 38c:	10 e0       	ldi	r17, 0x00	; 0
+		if (mode == 5)
+		{
+			uint8_t shiftedNum =0x00;
+			for (j=0;j<9;j++)
+			{
+				writeByte(shiftedNum);
+ 38e:	81 2f       	mov	r24, r17
+ 390:	7f de       	rcall	.-770    	; 0x90 <_Z9writeByteh>
+				shiftedNum = shiftedNum<<1;
+ 392:	11 0f       	add	r17, r17
+				shiftedNum = shiftedNum + 1;				   
+ 394:	1f 5f       	subi	r17, 0xFF	; 255
+ 396:	2f e9       	ldi	r18, 0x9F	; 159
+ 398:	86 e8       	ldi	r24, 0x86	; 134
+ 39a:	91 e0       	ldi	r25, 0x01	; 1
+ 39c:	21 50       	subi	r18, 0x01	; 1
+ 39e:	80 40       	sbci	r24, 0x00	; 0
+ 3a0:	90 40       	sbci	r25, 0x00	; 0
+ 3a2:	e1 f7       	brne	.-8      	; 0x39c <__stack+0x13d>
+ 3a4:	00 c0       	rjmp	.+0      	; 0x3a6 <__stack+0x147>
+ 3a6:	00 00       	nop
+			}
+		}
+		if (mode == 5)
+		{
+			uint8_t shiftedNum =0x00;
+			for (j=0;j<9;j++)
+ 3a8:	80 91 7f 00 	lds	r24, 0x007F	; 0x80007f <j>
+ 3ac:	8f 5f       	subi	r24, 0xFF	; 255
+ 3ae:	80 93 7f 00 	sts	0x007F, r24	; 0x80007f <j>
+ 3b2:	89 30       	cpi	r24, 0x09	; 9
+ 3b4:	60 f3       	brcs	.-40     	; 0x38e <__stack+0x12f>
+				shiftedNum = shiftedNum<<1;
+				shiftedNum = shiftedNum + 1;				   
+				Wait();										
+			}		
+		}
+		if (mode == 6)
+ 3b6:	80 91 80 00 	lds	r24, 0x0080	; 0x800080 <mode>
+ 3ba:	86 30       	cpi	r24, 0x06	; 6
+ 3bc:	09 f0       	breq	.+2      	; 0x3c0 <__stack+0x161>
+ 3be:	11 cf       	rjmp	.-478    	; 0x1e2 <main+0x7e>
+		{
+			writeByte(0xFF);
+ 3c0:	8f ef       	ldi	r24, 0xFF	; 255
+ 3c2:	66 de       	rcall	.-820    	; 0x90 <_Z9writeByteh>
+ 3c4:	2f e9       	ldi	r18, 0x9F	; 159
+ 3c6:	86 e8       	ldi	r24, 0x86	; 134
+ 3c8:	91 e0       	ldi	r25, 0x01	; 1
+ 3ca:	21 50       	subi	r18, 0x01	; 1
+ 3cc:	80 40       	sbci	r24, 0x00	; 0
+ 3ce:	90 40       	sbci	r25, 0x00	; 0
+ 3d0:	e1 f7       	brne	.-8      	; 0x3ca <__stack+0x16b>
+ 3d2:	00 c0       	rjmp	.+0      	; 0x3d4 <__stack+0x175>
+ 3d4:	00 00       	nop
+ 3d6:	05 cf       	rjmp	.-502    	; 0x1e2 <main+0x7e>
+				Wait();
+			}
+		}
+		if (mode == 1)
+		{
+			for (j=0;j<16;j++)
+ 3d8:	10 92 7f 00 	sts	0x007F, r1	; 0x80007f <j>
+ 3dc:	30 cf       	rjmp	.-416    	; 0x23e <main+0xda>
+				writeByte(pattern3[j]);
+				Wait();	
+				Wait();
+			}
+		}
+		if (mode == 1)
+ 3de:	81 30       	cpi	r24, 0x01	; 1
+ 3e0:	09 f0       	breq	.+2      	; 0x3e4 <__stack+0x185>
+ 3e2:	46 cf       	rjmp	.-372    	; 0x270 <__stack+0x11>
+ 3e4:	f9 cf       	rjmp	.-14     	; 0x3d8 <__stack+0x179>
+				Wait();
+			}
+		}
+		if (mode == 2)
+		{
+			for (j=0;j<7;j++)
+ 3e6:	10 92 7f 00 	sts	0x007F, r1	; 0x80007f <j>
+ 3ea:	49 cf       	rjmp	.-366    	; 0x27e <__stack+0x1f>
+			{
+				writeByte(pattern1[j]);
+				Wait();
+			}
+		}
+		if (mode == 2)
+ 3ec:	82 30       	cpi	r24, 0x02	; 2
+ 3ee:	09 f0       	breq	.+2      	; 0x3f2 <__stack+0x193>
+ 3f0:	7e cf       	rjmp	.-260    	; 0x2ee <__stack+0x8f>
+ 3f2:	f9 cf       	rjmp	.-14     	; 0x3e6 <__stack+0x187>
+			}
+					
+		}
+		if (mode == 3)
+		{
+			for (j=0;j<6;j++)
+ 3f4:	10 92 7f 00 	sts	0x007F, r1	; 0x80007f <j>
+ 3f8:	81 cf       	rjmp	.-254    	; 0x2fc <__stack+0x9d>
+					Wait();
+				}
+			}
+					
+		}
+		if (mode == 3)
+ 3fa:	83 30       	cpi	r24, 0x03	; 3
+ 3fc:	09 f0       	breq	.+2      	; 0x400 <__FUSE_REGION_LENGTH__>
+ 3fe:	97 cf       	rjmp	.-210    	; 0x32e <__stack+0xcf>
+ 400:	f9 cf       	rjmp	.-14     	; 0x3f4 <__stack+0x195>
+			}
+			
+		}
+		if (mode == 4)
+		{
+			for (j=0;j<2;j++)
+ 402:	10 92 7f 00 	sts	0x007F, r1	; 0x80007f <j>
+ 406:	9a cf       	rjmp	.-204    	; 0x33c <__stack+0xdd>
+				writeByte(pattern4[j]);
+				Wait();
+			}
+			
+		}
+		if (mode == 4)
+ 408:	84 30       	cpi	r24, 0x04	; 4
+ 40a:	09 f0       	breq	.+2      	; 0x40e <__FUSE_REGION_LENGTH__+0xe>
+ 40c:	b9 cf       	rjmp	.-142    	; 0x380 <__stack+0x121>
+ 40e:	f9 cf       	rjmp	.-14     	; 0x402 <__FUSE_REGION_LENGTH__+0x2>
+			}
+		}
+		if (mode == 5)
+		{
+			uint8_t shiftedNum =0x00;
+			for (j=0;j<9;j++)
+ 410:	10 92 7f 00 	sts	0x007F, r1	; 0x80007f <j>
+ 414:	bb cf       	rjmp	.-138    	; 0x38c <__stack+0x12d>
+				writeByte(pattern5[j]);
+				Wait();
+				Wait();
+			}
+		}
+		if (mode == 5)
+ 416:	85 30       	cpi	r24, 0x05	; 5
+ 418:	71 f6       	brne	.-100    	; 0x3b6 <__stack+0x157>
+ 41a:	fa cf       	rjmp	.-12     	; 0x410 <__FUSE_REGION_LENGTH__+0x10>
+
+0000041c <_exit>:
+ 41c:	f8 94       	cli
+
+0000041e <__stop_program>:
+ 41e:	ff cf       	rjmp	.-2      	; 0x41e <__stop_program>
