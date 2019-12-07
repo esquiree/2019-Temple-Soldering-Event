@@ -1,0 +1,776 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="D">
+  <design>
+    <source>C:\Users\Reed\Documents\MiniTempleT\MiniTempleT.sch</source>
+    <date>1/25/2019 21:08:16</date>
+    <tool>Eeschema (5.0.0)</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title/>
+        <company/>
+        <rev/>
+        <date/>
+        <source>MiniTempleT.sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="D1">
+      <value>LED</value>
+      <footprint>TEST:LED_D5.0mm_BigPads</footprint>
+      <libsource lib="Device" part="LED" description="LED generic"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5B1F3806</tstamp>
+    </comp>
+    <comp ref="D2">
+      <value>LED</value>
+      <footprint>TEST:LED_D5.0mm_BigPads</footprint>
+      <libsource lib="Device" part="LED" description="LED generic"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5B1F3AD6</tstamp>
+    </comp>
+    <comp ref="D3">
+      <value>LED</value>
+      <footprint>TEST:LED_D5.0mm_BigPads</footprint>
+      <libsource lib="Device" part="LED" description="LED generic"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5B1F3AF8</tstamp>
+    </comp>
+    <comp ref="D4">
+      <value>LED</value>
+      <footprint>TEST:LED_D5.0mm_BigPads</footprint>
+      <libsource lib="Device" part="LED" description="LED generic"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5B1F3B29</tstamp>
+    </comp>
+    <comp ref="D5">
+      <value>LED</value>
+      <footprint>TEST:LED_D5.0mm_BigPads</footprint>
+      <libsource lib="Device" part="LED" description="LED generic"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5B1F3B81</tstamp>
+    </comp>
+    <comp ref="D6">
+      <value>LED</value>
+      <footprint>TEST:LED_D5.0mm_BigPads</footprint>
+      <libsource lib="Device" part="LED" description="LED generic"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5B1F3BAC</tstamp>
+    </comp>
+    <comp ref="D7">
+      <value>LED</value>
+      <footprint>TEST:LED_D5.0mm_BigPads</footprint>
+      <libsource lib="Device" part="LED" description="LED generic"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5B1F3BE2</tstamp>
+    </comp>
+    <comp ref="D8">
+      <value>LED</value>
+      <footprint>TEST:LED_D5.0mm_BigPads</footprint>
+      <libsource lib="Device" part="LED" description="LED generic"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5B1F3C23</tstamp>
+    </comp>
+    <comp ref="Shift1">
+      <value>74HC595</value>
+      <footprint>Housings_SOIC:SOIC-16W_5.3x10.2mm_Pitch1.27mm</footprint>
+      <libsource lib="74xx" part="74HC595" description="8-bit serial in/out Shift Register 3-State Outputs"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5B1F3CC6</tstamp>
+    </comp>
+    <comp ref="POWER1">
+      <value>CONN_01X04</value>
+      <footprint>Pin_Headers:Pin_Header_Straight_1x04_Pitch2.54mm</footprint>
+      <libsource lib="conn" part="Conn_01x04" description="Generic connector, single row, 01x04"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5B1FAED0</tstamp>
+    </comp>
+    <comp ref="Tiny85">
+      <value>ATTINY85-20PU</value>
+      <footprint>Housings_DIP:DIP-8_W7.62mm</footprint>
+      <libsource lib="atmel" part="ATTINY85-20PU" description="ATTINY85, PDIP8, 8k Flash, 512B SRAM, 512B EEPROM, Debug Wire"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5B1FC363</tstamp>
+    </comp>
+    <comp ref="D9">
+      <value>LED</value>
+      <footprint>TEST:LED_D5.0mm_BigPads</footprint>
+      <libsource lib="Device" part="LED" description="LED generic"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5B295E57</tstamp>
+    </comp>
+    <comp ref="D10">
+      <value>LED</value>
+      <footprint>TEST:LED_D5.0mm_BigPads</footprint>
+      <libsource lib="Device" part="LED" description="LED generic"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5B295E5D</tstamp>
+    </comp>
+    <comp ref="D11">
+      <value>LED</value>
+      <footprint>TEST:LED_D5.0mm_BigPads</footprint>
+      <libsource lib="Device" part="LED" description="LED generic"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5B295E63</tstamp>
+    </comp>
+    <comp ref="D12">
+      <value>LED</value>
+      <footprint>TEST:LED_D5.0mm_BigPads</footprint>
+      <libsource lib="Device" part="LED" description="LED generic"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5B295E69</tstamp>
+    </comp>
+    <comp ref="D13">
+      <value>LED</value>
+      <footprint>TEST:LED_D5.0mm_BigPads</footprint>
+      <libsource lib="Device" part="LED" description="LED generic"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5B295E6F</tstamp>
+    </comp>
+    <comp ref="D14">
+      <value>LED</value>
+      <footprint>TEST:LED_D5.0mm_BigPads</footprint>
+      <libsource lib="Device" part="LED" description="LED generic"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5B295E75</tstamp>
+    </comp>
+    <comp ref="D15">
+      <value>LED</value>
+      <footprint>TEST:LED_D5.0mm_BigPads</footprint>
+      <libsource lib="Device" part="LED" description="LED generic"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5B295E7B</tstamp>
+    </comp>
+    <comp ref="D16">
+      <value>LED</value>
+      <footprint>TEST:LED_D5.0mm_BigPads</footprint>
+      <libsource lib="Device" part="LED" description="LED generic"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5B295E81</tstamp>
+    </comp>
+    <comp ref="Shift2">
+      <value>74HC595</value>
+      <footprint>Housings_SOIC:SOIC-16W_5.3x10.2mm_Pitch1.27mm</footprint>
+      <libsource lib="74xx" part="74HC595" description="8-bit serial in/out Shift Register 3-State Outputs"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5B295E87</tstamp>
+    </comp>
+    <comp ref="D17">
+      <value>LED</value>
+      <footprint>TEST:LED_D5.0mm_BigPads</footprint>
+      <libsource lib="Device" part="LED" description="LED generic"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5B296425</tstamp>
+    </comp>
+    <comp ref="D18">
+      <value>LED</value>
+      <footprint>TEST:LED_D5.0mm_BigPads</footprint>
+      <libsource lib="Device" part="LED" description="LED generic"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5B29642B</tstamp>
+    </comp>
+    <comp ref="D19">
+      <value>LED</value>
+      <footprint>TEST:LED_D5.0mm_BigPads</footprint>
+      <libsource lib="Device" part="LED" description="LED generic"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5B296431</tstamp>
+    </comp>
+    <comp ref="D20">
+      <value>LED</value>
+      <footprint>TEST:LED_D5.0mm_BigPads</footprint>
+      <libsource lib="Device" part="LED" description="LED generic"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5B296437</tstamp>
+    </comp>
+    <comp ref="D21">
+      <value>LED</value>
+      <footprint>TEST:LED_D5.0mm_BigPads</footprint>
+      <libsource lib="Device" part="LED" description="LED generic"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5B29643D</tstamp>
+    </comp>
+    <comp ref="D22">
+      <value>LED</value>
+      <footprint>TEST:LED_D5.0mm_BigPads</footprint>
+      <libsource lib="Device" part="LED" description="LED generic"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5B296443</tstamp>
+    </comp>
+    <comp ref="D23">
+      <value>LED</value>
+      <footprint>TEST:LED_D5.0mm_BigPads</footprint>
+      <libsource lib="Device" part="LED" description="LED generic"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5B296449</tstamp>
+    </comp>
+    <comp ref="D24">
+      <value>LED</value>
+      <footprint>TEST:LED_D5.0mm_BigPads</footprint>
+      <libsource lib="Device" part="LED" description="LED generic"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5B29644F</tstamp>
+    </comp>
+    <comp ref="Shift3">
+      <value>74HC595</value>
+      <footprint>Housings_SOIC:SOIC-16W_5.3x10.2mm_Pitch1.27mm</footprint>
+      <libsource lib="74xx" part="74HC595" description="8-bit serial in/out Shift Register 3-State Outputs"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5B296455</tstamp>
+    </comp>
+    <comp ref="D25">
+      <value>LED</value>
+      <footprint>TEST:LED_D5.0mm_BigPads</footprint>
+      <libsource lib="Device" part="LED" description="LED generic"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5B296ADB</tstamp>
+    </comp>
+    <comp ref="D26">
+      <value>LED</value>
+      <footprint>TEST:LED_D5.0mm_BigPads</footprint>
+      <libsource lib="Device" part="LED" description="LED generic"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5B296AE1</tstamp>
+    </comp>
+    <comp ref="D27">
+      <value>LED</value>
+      <footprint>TEST:LED_D5.0mm_BigPads</footprint>
+      <libsource lib="Device" part="LED" description="LED generic"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5B296AE7</tstamp>
+    </comp>
+    <comp ref="D28">
+      <value>LED</value>
+      <footprint>TEST:LED_D5.0mm_BigPads</footprint>
+      <libsource lib="Device" part="LED" description="LED generic"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5B296AED</tstamp>
+    </comp>
+    <comp ref="D29">
+      <value>LED</value>
+      <footprint>TEST:LED_D5.0mm_BigPads</footprint>
+      <libsource lib="Device" part="LED" description="LED generic"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5B296AF3</tstamp>
+    </comp>
+    <comp ref="D30">
+      <value>LED</value>
+      <footprint>TEST:LED_D5.0mm_BigPads</footprint>
+      <libsource lib="Device" part="LED" description="LED generic"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5B296AF9</tstamp>
+    </comp>
+    <comp ref="D31">
+      <value>LED</value>
+      <footprint>TEST:LED_D5.0mm_BigPads</footprint>
+      <libsource lib="Device" part="LED" description="LED generic"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5B296AFF</tstamp>
+    </comp>
+    <comp ref="D32">
+      <value>LED</value>
+      <footprint>TEST:LED_D5.0mm_BigPads</footprint>
+      <libsource lib="Device" part="LED" description="LED generic"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5B296B05</tstamp>
+    </comp>
+    <comp ref="Shift4">
+      <value>74HC595</value>
+      <footprint>Housings_SOIC:SOIC-16W_5.3x10.2mm_Pitch1.27mm</footprint>
+      <libsource lib="74xx" part="74HC595" description="8-bit serial in/out Shift Register 3-State Outputs"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5B296B0B</tstamp>
+    </comp>
+    <comp ref="Battery1">
+      <value>Conn_01x02</value>
+      <footprint>TEST:CR2032 Housing</footprint>
+      <libsource lib="conn" part="Conn_01x02" description="Generic connector, single row, 01x02"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5B2976EE</tstamp>
+    </comp>
+    <comp ref="D33">
+      <value>LED</value>
+      <footprint>TEST:LED_D5.0mm_BigPads</footprint>
+      <libsource lib="Device" part="LED" description="LED generic"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5B299028</tstamp>
+    </comp>
+    <comp ref="D34">
+      <value>LED</value>
+      <footprint>TEST:LED_D5.0mm_BigPads</footprint>
+      <libsource lib="Device" part="LED" description="LED generic"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5B29902E</tstamp>
+    </comp>
+    <comp ref="D35">
+      <value>LED</value>
+      <footprint>TEST:LED_D5.0mm_BigPads</footprint>
+      <libsource lib="Device" part="LED" description="LED generic"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5B299034</tstamp>
+    </comp>
+    <comp ref="D36">
+      <value>LED</value>
+      <footprint>TEST:LED_D5.0mm_BigPads</footprint>
+      <libsource lib="Device" part="LED" description="LED generic"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5B29903A</tstamp>
+    </comp>
+    <comp ref="D37">
+      <value>LED</value>
+      <footprint>TEST:LED_D5.0mm_BigPads</footprint>
+      <libsource lib="Device" part="LED" description="LED generic"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5B299040</tstamp>
+    </comp>
+    <comp ref="D38">
+      <value>LED</value>
+      <footprint>TEST:LED_D5.0mm_BigPads</footprint>
+      <libsource lib="Device" part="LED" description="LED generic"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5B299046</tstamp>
+    </comp>
+    <comp ref="Shift5">
+      <value>74HC595</value>
+      <footprint>Housings_SOIC:SOIC-16W_5.3x10.2mm_Pitch1.27mm</footprint>
+      <libsource lib="74xx" part="74HC595" description="8-bit serial in/out Shift Register 3-State Outputs"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5B299058</tstamp>
+    </comp>
+    <comp ref="BTN1">
+      <value>Conn_01x02</value>
+      <footprint>Buttons_Switches_THT:SW_PUSH_6mm_h5mm</footprint>
+      <libsource lib="conn" part="Conn_01x02" description="Generic connector, single row, 01x02"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5B29D7C7</tstamp>
+    </comp>
+    <comp ref="Power1">
+      <value>Conn_01x02</value>
+      <footprint>Pin_Headers:Pin_Header_Straight_1x02_Pitch2.54mm</footprint>
+      <libsource lib="conn" part="Conn_01x02" description="Generic connector, single row, 01x02"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5B5F5ADC</tstamp>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="74xx" part="74HC595">
+      <aliases>
+        <alias>74LS595</alias>
+        <alias>74HCT595</alias>
+      </aliases>
+      <description>8-bit serial in/out Shift Register 3-State Outputs</description>
+      <docs>http://www.ti.com/lit/ds/symlink/sn74hc595.pdf</docs>
+      <footprints>
+        <fp>DIP*W7.62mm*</fp>
+        <fp>SOIC*3.9x9.9mm*P1.27mm*</fp>
+        <fp>TSSOP*4.4x5mm*P0.65mm*</fp>
+        <fp>SOIC*5.3x10.2mm*P1.27mm*</fp>
+        <fp>SOIC*7.5x10.3mm*P1.27mm*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">74HC595</field>
+      </fields>
+      <pins>
+        <pin num="1" name="QB" type="3state"/>
+        <pin num="2" name="QC" type="3state"/>
+        <pin num="3" name="QD" type="3state"/>
+        <pin num="4" name="QE" type="3state"/>
+        <pin num="5" name="QF" type="3state"/>
+        <pin num="6" name="QG" type="3state"/>
+        <pin num="7" name="QH" type="3state"/>
+        <pin num="8" name="GND" type="power_in"/>
+        <pin num="9" name="QH'" type="output"/>
+        <pin num="10" name="~SRCLR" type="input"/>
+        <pin num="11" name="SRCLK" type="input"/>
+        <pin num="12" name="RCLK" type="input"/>
+        <pin num="13" name="~OE" type="input"/>
+        <pin num="14" name="SER" type="input"/>
+        <pin num="15" name="QA" type="3state"/>
+        <pin num="16" name="VCC" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="LED">
+      <description>LED generic</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>LED*</fp>
+        <fp>LED_SMD:*</fp>
+        <fp>LED_THT:*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">LED</field>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="atmel" part="ATTINY25-20PU">
+      <aliases>
+        <alias>ATTINY45-20PU</alias>
+        <alias>ATTINY85-20PU</alias>
+      </aliases>
+      <description>PDIP8, 2k Flash, 128B SRAM, 128B EEPROM, Debug Wire</description>
+      <docs>http://www.atmel.com/images/atmel-2586-avr-8-bit-microcontroller-attiny25-attiny45-attiny85_datasheet.pdf</docs>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">ATTINY25-20PU</field>
+        <field name="Footprint">Housings_DIP:DIP-8_W7.62mm</field>
+      </fields>
+      <pins>
+        <pin num="1" name="PB5(~RESET~/dW/ADC0/PCINT5)" type="BiDi"/>
+        <pin num="2" name="PB3(XTAL1/CLKI/OC1B/ADC3/PCINT3)" type="BiDi"/>
+        <pin num="3" name="PB4(XTAL2/CLKO/OC1B/ADC2/PCINT4)" type="BiDi"/>
+        <pin num="4" name="GND" type="power_in"/>
+        <pin num="5" name="PB0(MOSI/DI/SDA/AIN0/OC0A/OC1A/AREF/PCINT0)" type="BiDi"/>
+        <pin num="6" name="PB1(MISO/DO/AIN1/OC0B/OC1A/PCINT1)" type="BiDi"/>
+        <pin num="7" name="PB2(SCK/USCK/SCL/T0/INT0/ADC1/PCINT2)" type="BiDi"/>
+        <pin num="8" name="VCC" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="conn" part="Conn_01x02">
+      <description>Generic connector, single row, 01x02</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_??x*mm*</fp>
+        <fp>Connector*:*1x??x*mm*</fp>
+        <fp>Pin?Header?Straight?1X*</fp>
+        <fp>Pin?Header?Angled?1X*</fp>
+        <fp>Socket?Strip?Straight?1X*</fp>
+        <fp>Socket?Strip?Angled?1X*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x02</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="conn" part="Conn_01x04">
+      <description>Generic connector, single row, 01x04</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_??x*mm*</fp>
+        <fp>Connector*:*1x??x*mm*</fp>
+        <fp>Pin?Header?Straight?1X*</fp>
+        <fp>Pin?Header?Angled?1X*</fp>
+        <fp>Socket?Strip?Straight?1X*</fp>
+        <fp>Socket?Strip?Angled?1X*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x04</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+        <pin num="3" name="Pin_3" type="passive"/>
+        <pin num="4" name="Pin_4" type="passive"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="74xx">
+      <uri>C:\Program Files\KiCad\share\kicad\library/74xx.lib</uri>
+    </library>
+    <library logical="Device">
+      <uri>C:\Program Files\KiCad\share\kicad\library/Device.lib</uri>
+    </library>
+    <library logical="atmel">
+      <uri>C:\Program Files\KiCad\share\kicad\library/atmel.lib</uri>
+    </library>
+    <library logical="conn">
+      <uri>C:\Program Files\KiCad\share\kicad\library/conn.lib</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="Net-(D33-Pad2)">
+      <node ref="D33" pin="2"/>
+      <node ref="Shift5" pin="15"/>
+    </net>
+    <net code="2" name="Net-(D35-Pad2)">
+      <node ref="D35" pin="2"/>
+      <node ref="Shift5" pin="2"/>
+    </net>
+    <net code="3" name="Net-(D36-Pad2)">
+      <node ref="D36" pin="2"/>
+      <node ref="Shift5" pin="3"/>
+    </net>
+    <net code="4" name="Net-(D37-Pad2)">
+      <node ref="D37" pin="2"/>
+      <node ref="Shift5" pin="4"/>
+    </net>
+    <net code="5" name="Net-(D38-Pad2)">
+      <node ref="Shift5" pin="5"/>
+      <node ref="D38" pin="2"/>
+    </net>
+    <net code="6" name="Net-(Shift5-Pad6)">
+      <node ref="Shift5" pin="6"/>
+    </net>
+    <net code="7" name="Net-(Shift5-Pad7)">
+      <node ref="Shift5" pin="7"/>
+    </net>
+    <net code="8" name="Net-(Shift5-Pad9)">
+      <node ref="Shift5" pin="9"/>
+    </net>
+    <net code="9" name="Net-(D34-Pad2)">
+      <node ref="D34" pin="2"/>
+      <node ref="Shift5" pin="1"/>
+    </net>
+    <net code="10" name="GND">
+      <node ref="D32" pin="1"/>
+      <node ref="D16" pin="1"/>
+      <node ref="D15" pin="1"/>
+      <node ref="Shift4" pin="8"/>
+      <node ref="D14" pin="1"/>
+      <node ref="D13" pin="1"/>
+      <node ref="Power1" pin="1"/>
+      <node ref="D12" pin="1"/>
+      <node ref="Tiny85" pin="4"/>
+      <node ref="D10" pin="1"/>
+      <node ref="D9" pin="1"/>
+      <node ref="D11" pin="1"/>
+      <node ref="D8" pin="1"/>
+      <node ref="D7" pin="1"/>
+      <node ref="D6" pin="1"/>
+      <node ref="D5" pin="1"/>
+      <node ref="D4" pin="1"/>
+      <node ref="D3" pin="1"/>
+      <node ref="D2" pin="1"/>
+      <node ref="Shift1" pin="8"/>
+      <node ref="Shift2" pin="8"/>
+      <node ref="D19" pin="1"/>
+      <node ref="D18" pin="1"/>
+      <node ref="D17" pin="1"/>
+      <node ref="D1" pin="1"/>
+      <node ref="D22" pin="1"/>
+      <node ref="D21" pin="1"/>
+      <node ref="D20" pin="1"/>
+      <node ref="Shift3" pin="8"/>
+      <node ref="D23" pin="1"/>
+      <node ref="BTN1" pin="1"/>
+      <node ref="D25" pin="1"/>
+      <node ref="D24" pin="1"/>
+      <node ref="D37" pin="1"/>
+      <node ref="D31" pin="1"/>
+      <node ref="D36" pin="1"/>
+      <node ref="D35" pin="1"/>
+      <node ref="D34" pin="1"/>
+      <node ref="D38" pin="1"/>
+      <node ref="Shift5" pin="8"/>
+      <node ref="D33" pin="1"/>
+      <node ref="Battery1" pin="1"/>
+      <node ref="D30" pin="1"/>
+      <node ref="D29" pin="1"/>
+      <node ref="D28" pin="1"/>
+      <node ref="D27" pin="1"/>
+      <node ref="D26" pin="1"/>
+    </net>
+    <net code="11" name="Net-(Shift4-Pad9)">
+      <node ref="Shift5" pin="14"/>
+      <node ref="Shift4" pin="9"/>
+    </net>
+    <net code="12" name="Serial_Clock">
+      <node ref="Shift3" pin="11"/>
+      <node ref="Shift5" pin="11"/>
+      <node ref="Tiny85" pin="6"/>
+      <node ref="Shift2" pin="11"/>
+      <node ref="Shift4" pin="11"/>
+      <node ref="Shift1" pin="11"/>
+    </net>
+    <net code="13" name="Reg_Clock">
+      <node ref="Shift5" pin="12"/>
+      <node ref="Shift3" pin="12"/>
+      <node ref="Shift4" pin="12"/>
+      <node ref="Tiny85" pin="7"/>
+      <node ref="Shift1" pin="12"/>
+      <node ref="Shift2" pin="12"/>
+    </net>
+    <net code="14" name="Output_Enable">
+      <node ref="Shift3" pin="13"/>
+      <node ref="Shift4" pin="13"/>
+      <node ref="Shift1" pin="13"/>
+      <node ref="Tiny85" pin="2"/>
+      <node ref="Shift2" pin="13"/>
+      <node ref="Shift5" pin="13"/>
+    </net>
+    <net code="15" name="Net-(D30-Pad2)">
+      <node ref="D30" pin="2"/>
+      <node ref="Shift4" pin="5"/>
+    </net>
+    <net code="16" name="Net-(D31-Pad2)">
+      <node ref="Shift4" pin="6"/>
+      <node ref="D31" pin="2"/>
+    </net>
+    <net code="17" name="Net-(D32-Pad2)">
+      <node ref="D32" pin="2"/>
+      <node ref="Shift4" pin="7"/>
+    </net>
+    <net code="18" name="Net-(D27-Pad2)">
+      <node ref="D27" pin="2"/>
+      <node ref="Shift4" pin="2"/>
+    </net>
+    <net code="19" name="Net-(D25-Pad2)">
+      <node ref="D25" pin="2"/>
+      <node ref="Shift4" pin="15"/>
+    </net>
+    <net code="20" name="Net-(D26-Pad2)">
+      <node ref="D26" pin="2"/>
+      <node ref="Shift4" pin="1"/>
+    </net>
+    <net code="21" name="Net-(D28-Pad2)">
+      <node ref="Shift4" pin="3"/>
+      <node ref="D28" pin="2"/>
+    </net>
+    <net code="22" name="Net-(D29-Pad2)">
+      <node ref="Shift4" pin="4"/>
+      <node ref="D29" pin="2"/>
+    </net>
+    <net code="23" name="Net-(Shift2-Pad9)">
+      <node ref="Shift3" pin="14"/>
+      <node ref="Shift2" pin="9"/>
+    </net>
+    <net code="24" name="Net-(Shift1-Pad9)">
+      <node ref="Shift1" pin="9"/>
+      <node ref="Shift2" pin="14"/>
+    </net>
+    <net code="25" name="Net-(Shift3-Pad9)">
+      <node ref="Shift4" pin="14"/>
+      <node ref="Shift3" pin="9"/>
+    </net>
+    <net code="26" name="Master_Reset">
+      <node ref="Shift1" pin="10"/>
+      <node ref="Shift5" pin="16"/>
+      <node ref="Shift5" pin="10"/>
+      <node ref="Shift3" pin="10"/>
+      <node ref="Shift3" pin="16"/>
+      <node ref="Shift4" pin="16"/>
+      <node ref="Shift4" pin="10"/>
+      <node ref="POWER1" pin="1"/>
+      <node ref="Shift1" pin="16"/>
+      <node ref="Shift2" pin="10"/>
+      <node ref="Tiny85" pin="1"/>
+      <node ref="Shift2" pin="16"/>
+      <node ref="Tiny85" pin="8"/>
+    </net>
+    <net code="27" name="Net-(BTN1-Pad2)">
+      <node ref="BTN1" pin="2"/>
+      <node ref="Tiny85" pin="3"/>
+    </net>
+    <net code="28" name="Serial_Data">
+      <node ref="Shift1" pin="14"/>
+      <node ref="Tiny85" pin="5"/>
+    </net>
+    <net code="29" name="Net-(Battery1-Pad2)">
+      <node ref="Battery1" pin="2"/>
+      <node ref="Power1" pin="2"/>
+      <node ref="POWER1" pin="3"/>
+      <node ref="POWER1" pin="4"/>
+      <node ref="POWER1" pin="2"/>
+    </net>
+    <net code="30" name="Net-(D9-Pad2)">
+      <node ref="D9" pin="2"/>
+      <node ref="Shift2" pin="15"/>
+    </net>
+    <net code="31" name="Net-(D10-Pad2)">
+      <node ref="Shift2" pin="1"/>
+      <node ref="D10" pin="2"/>
+    </net>
+    <net code="32" name="Net-(D11-Pad2)">
+      <node ref="Shift2" pin="2"/>
+      <node ref="D11" pin="2"/>
+    </net>
+    <net code="33" name="Net-(D12-Pad2)">
+      <node ref="D12" pin="2"/>
+      <node ref="Shift2" pin="3"/>
+    </net>
+    <net code="34" name="Net-(D13-Pad2)">
+      <node ref="Shift2" pin="4"/>
+      <node ref="D13" pin="2"/>
+    </net>
+    <net code="35" name="Net-(D14-Pad2)">
+      <node ref="Shift2" pin="5"/>
+      <node ref="D14" pin="2"/>
+    </net>
+    <net code="36" name="Net-(D15-Pad2)">
+      <node ref="D15" pin="2"/>
+      <node ref="Shift2" pin="6"/>
+    </net>
+    <net code="37" name="Net-(D16-Pad2)">
+      <node ref="D16" pin="2"/>
+      <node ref="Shift2" pin="7"/>
+    </net>
+    <net code="38" name="Net-(D6-Pad2)">
+      <node ref="Shift1" pin="5"/>
+      <node ref="D6" pin="2"/>
+    </net>
+    <net code="39" name="Net-(D3-Pad2)">
+      <node ref="D3" pin="2"/>
+      <node ref="Shift1" pin="2"/>
+    </net>
+    <net code="40" name="Net-(D4-Pad2)">
+      <node ref="D4" pin="2"/>
+      <node ref="Shift1" pin="3"/>
+    </net>
+    <net code="41" name="Net-(D7-Pad2)">
+      <node ref="D7" pin="2"/>
+      <node ref="Shift1" pin="6"/>
+    </net>
+    <net code="42" name="Net-(D1-Pad2)">
+      <node ref="D1" pin="2"/>
+      <node ref="Shift1" pin="15"/>
+    </net>
+    <net code="43" name="Net-(D2-Pad2)">
+      <node ref="D2" pin="2"/>
+      <node ref="Shift1" pin="1"/>
+    </net>
+    <net code="44" name="Net-(D8-Pad2)">
+      <node ref="D8" pin="2"/>
+      <node ref="Shift1" pin="7"/>
+    </net>
+    <net code="45" name="Net-(D5-Pad2)">
+      <node ref="Shift1" pin="4"/>
+      <node ref="D5" pin="2"/>
+    </net>
+    <net code="46" name="Net-(D22-Pad2)">
+      <node ref="D22" pin="2"/>
+      <node ref="Shift3" pin="5"/>
+    </net>
+    <net code="47" name="Net-(D20-Pad2)">
+      <node ref="D20" pin="2"/>
+      <node ref="Shift3" pin="3"/>
+    </net>
+    <net code="48" name="Net-(D21-Pad2)">
+      <node ref="Shift3" pin="4"/>
+      <node ref="D21" pin="2"/>
+    </net>
+    <net code="49" name="Net-(D23-Pad2)">
+      <node ref="D23" pin="2"/>
+      <node ref="Shift3" pin="6"/>
+    </net>
+    <net code="50" name="Net-(D24-Pad2)">
+      <node ref="D24" pin="2"/>
+      <node ref="Shift3" pin="7"/>
+    </net>
+    <net code="51" name="Net-(D17-Pad2)">
+      <node ref="Shift3" pin="15"/>
+      <node ref="D17" pin="2"/>
+    </net>
+    <net code="52" name="Net-(D19-Pad2)">
+      <node ref="D19" pin="2"/>
+      <node ref="Shift3" pin="2"/>
+    </net>
+    <net code="53" name="Net-(D18-Pad2)">
+      <node ref="D18" pin="2"/>
+      <node ref="Shift3" pin="1"/>
+    </net>
+  </nets>
+</export>
